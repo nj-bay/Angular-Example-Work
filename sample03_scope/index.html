@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+		<script src="js/app.js"></script>
+		<script src="js/controllers/firstController.js"></script>
+		<script src="js/controllers/secondController.js"></script>
+		<script src="js/controllers/thirdController.js"></script>
+	</head>
+
+	<body>
+		<div ng-app="myApp">
+
+			<div ng-controller="firstController">
+				<button ng-click="alertHello();">
+					Say Hello!
+				</button>
+				<div>{{aboutThisButton}}</div>
+			</div>	
+
+			<div ng-controller="secondController">
+				<button ng-click="alertGoodbye();">
+					Say Goodbye!
+				</button>
+				<div>{{aboutThisButton}}</div>
+			</div>
+
+			<div ng-controller="thirdController">
+				<input ng-model="food">
+				<div>
+					Would you like to add "{{food}}" to your list of favorite foods?
+				</div>
+				<button ng-click="addFood();">Add a food</button>
+				<div>
+					Your favorite foods are:
+				</div>
+				<ul>
+					<li ng-repeat="favorite in favorites">
+						{{favorite}}
+					</li>
+				</ul>
+			</div>
+
+		</div>	
+	</body>
+</html>

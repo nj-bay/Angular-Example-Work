@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+		<script src="js/app.js"></script>
+		<script src="js/controllers/firstController.js"></script>
+	</head>
+
+	<body>
+		<div ng-app="myApp">
+
+			<div ng-controller="firstController">
+				
+				<div>
+					<img ng-src="{{ pokemon_1.image }}" />
+					<p>
+						Name: {{ pokemon_1.name }}
+					</p>
+					<p>
+						Type 1: {{ pokemon_1.type1 }}
+					</p>					
+					<p>
+						Type 2: {{ pokemon_1.type2 }}
+					</p>
+				</div>
+
+ 				<div ng-repeat="pokemon in pokemon_team">
+					<img ng-src="{{ pokemon.image }}" />
+					<p>
+						Name: {{ pokemon.name }}
+					</p>
+					<p>
+						Type 1: {{ pokemon.type1 }}
+					</p>
+					<p> 
+						Type 2: {{ pokemon.type2 }}
+					</p>
+				</div>
+				
+			</div>	
+
+		</div>	
+	</body>
+</html>
